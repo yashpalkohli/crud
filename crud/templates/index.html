@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> All Employee Details</h1>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Deppartment</th>
+            <th>Action</th>
+        </tr>
+        {% for  e in employee %}
+        <tr>
+            <td>{{e.id}}</td>
+            <td>{{e.name}}</td>
+            <td>{{e.address}}</td>
+            <td>{{e.deppt}}</td>
+            <td>
+                <a href="update/{{e.id}}"><button style="background-color: red;">Update</button></a>
+                <a href="delete/{{e.id}}"><button style="background-color: green;">Delete</button></a>
+                <a href="user_form"><button style="background-color: blueviolet;">Add Employee</button></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
